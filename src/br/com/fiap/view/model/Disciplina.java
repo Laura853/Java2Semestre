@@ -1,4 +1,4 @@
-package br.com.fiap.view;
+package br.com.fiap.view.model;
 
 public class Disciplina {
     private String nome;
@@ -9,6 +9,11 @@ public class Disciplina {
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
         this.categoria = categoria;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " - " + categoria + " - " + cargaHoraria + "Horas";
     }
 
     public String getNome() {

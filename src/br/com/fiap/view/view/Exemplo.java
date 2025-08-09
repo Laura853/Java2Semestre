@@ -1,9 +1,9 @@
-package br.com.fiap.view;
+package br.com.fiap.view.view;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class view {
+public class Exemplo {
     public static class Exemplo1 {
 
         public static void main(String[] args) {
