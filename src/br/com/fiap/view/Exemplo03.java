@@ -1,4 +1,4 @@
-package br.com.fiap.view.view;
+package br.com.fiap.view;
 
 import javax.swing.*;
 import java.util.HashSet;

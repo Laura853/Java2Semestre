@@ -1,6 +1,6 @@
-package br.com.fiap.view.view;
+package br.com.fiap.view;
 
-import br.com.fiap.view.model.Disciplina;
+import br.com.fiap.model.Disciplina;
 
 import javax.swing.*;
 import java.util.ArrayList;

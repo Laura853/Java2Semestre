@@ -1,4 +1,4 @@
-package br.com.fiap.view.model;
+package br.com.fiap.model;
 
 public class Disciplina {
     private String nome;

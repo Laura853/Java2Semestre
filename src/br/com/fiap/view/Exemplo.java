@@ -1,4 +1,4 @@
-package br.com.fiap.view.view;
+package br.com.fiap.view;
 
 import java.util.ArrayList;
 import java.util.List;
