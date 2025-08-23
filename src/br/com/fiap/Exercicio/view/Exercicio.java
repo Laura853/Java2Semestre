@@ -86,17 +86,35 @@ public class Exercicio {
             opcao = leitor.nextInt();
             switch (opcao){
                 case 1: //Exibir nome e medias
-                    for (int i = 0; i < alunos.size(); i++) {
-                        System.out.println("Alunos: " + alunos.get().getNome() + "Idades: " + alunos.get().getIdade());
+                    for (Aluno aluno: alunos) {
+                        System.out.println(aluno.getNome() + "média: " + (aluno.getNota1() + aluno.getNota2())/2);
                     }
                     break;
                 case 2: //Exibir alunos média > 6
-                    if (somaNotas>6)
+                    for (Aluno aluno : alunos){
+                        if ((aluno.getNota1() + aluno.getNota2())/2 > 6){
+                            System.out.println(aluno);
+                        }
+                    }
                     break;
                 case 3: //Exibir alunos idade > 30
+                    for (Aluno aluno: alunos){
+                        if ((aluno.getIdade())>30){
+                            System.out.println(aluno);
+                        }
+                    }
                     break;
                 case 4: //Remover alunos media < 3
+                    for (int i = 0; i < alunos.size(); i++){
+                        if ((alunos.get(i).getNota1() + alunos.get(i).getNota2())/2 < 3)
+                            alunos.remove(alunos.get(i));
+                    }
                     break;
+                case 5:
+                    System.out.println("Finalizando o programa");
+                    break;
+                default:
+                    System.out.println("Opção inválida");
 
             }
 
