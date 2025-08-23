@@ -64,10 +64,5 @@ public class Exemplo02 {
         }while (opcao !=0);
 
 
-
-
-
-
-
     }
 }
