@@ -8,6 +8,14 @@ public class Funcionario {
    private boolean ativo;
    private String email;
 
+    public Funcionario(int codigo, String nome, double salario, boolean ativo, String email) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.salario = salario;
+        this.ativo = ativo;
+        this.email = email;
+    }
+
     public int getCodigo() {
         return codigo;
     }
