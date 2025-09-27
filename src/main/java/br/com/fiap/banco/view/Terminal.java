@@ -1,6 +1,7 @@
 package br.com.fiap.banco.view;
 
 import br.com.fiap.banco.dao.FuncionarioDao;
+import br.com.fiap.banco.exception.EntidadeNaoEncontradaException;
 import br.com.fiap.banco.model.Funcionario;
 
 import java.sql.SQLException;
@@ -28,23 +29,47 @@ public class Terminal {
                         System.out.println("Funcionário cadastrado com sucesso!");
                         break;
                     case 2:
-                        //Atualizar
-                        funcionario = lerFuncionario(scanner);
-                        dao.atualizar(funcionario);
-                        System.out.println("Funcionário atualizado com sucesso!");
+                        try {
+                            //Atualizar
+                            funcionario = lerFuncionario(scanner);
+                            dao.atualizar(funcionario);
+                            System.out.println("Funcionário atualizado com sucesso!");
+                        } catch (EntidadeNaoEncontradaException e){
+                            System.err.println(e.getMessage());
+                        }
                         break;
-
+                    case 3:
+                        try {
+                            //Pesquisar por ID
+                            System.out.println("Digite o código do funcionário");
+                            int codigo = scanner.nextInt();
+                            Funcionario func = dao.buscar(codigo);
+                            System.out.println(func);
+                        } catch (EntidadeNaoEncontradaException e){
+                            System.err.println(e.getMessage());
+                        }
+                        break;
                     case 4:
                         List<Funcionario> lista = dao.listar();
                         for (Funcionario f : lista){
                             System.out.println(f);
                         }
                         break;
+                    case 5:
+                        try {
+                            System.out.println("Digite o código do funcionário");
+                            int codigo = scanner.nextInt();
+                            dao.remover(codigo);
+                            System.out.println(" Funcionário removido com sucesso!");
+                        } catch (EntidadeNaoEncontradaException e){
+                            System.err.println(e.getMessage());
+                        }
+                        break;
                     case 0:
                         System.out.println("Finalizando o sistema");
                         break;
                     default:
-                        System.out.println("Opção inválida");
+                        System.err.println("Opção inválida");
                 }
             }while (opcao!=0);
         } catch (Exception e) {
